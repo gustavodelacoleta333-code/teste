@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dp4udr0r780vl"]
+
+[ext_resource type="Texture2D" uid="uid://d3pi6mohcmq4p" path="res://art/graphics/plants/tree.png" id="1_eov6a"]
+
+[node name="arvore" type="StaticBody2D" unique_id=699472083]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2111875286]
+position = Vector2(48, 33)
+texture = ExtResource("1_eov6a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=106646826]
