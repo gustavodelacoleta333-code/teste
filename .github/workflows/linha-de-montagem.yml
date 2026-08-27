@@ -14,3 +14,32 @@ on:
 jobs:
   build-e-teste:
     runs-on: ubuntu-latest
+
+    steps:
+      - name: 1. Pegar o codigo-fonte
+        uses: actions/checkout@v4
+
+      - name: 2. Preparar a estacao Godot 4.7
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.0
+          use-dotnet: false
+          include-templates: true
+
+      - name: 3. Verificar a versao do Godot
+        run: godot --version
+
+      - name: 4. Estacao de Teste (Controle de Qualidade)
+        run: |
+          godot --headless --path . --editor --quit
+
+      - name: 5. Estacao de Build (Montagem)
+        run: |
+          mkdir -p build
+          godot --headless --path . --export-release "Windows Desktop" build/TCC.exe
+
+      - name: 6. Empacotar o produto final
+        uses: actions/upload-artifact@v4
+        with:
+          name: TCC-Windows
+          path: build/
