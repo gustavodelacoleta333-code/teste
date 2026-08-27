@@ -138,7 +138,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fjrip")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chopp_back",
 "speed": 7.0
 }, {
@@ -155,7 +155,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_d2wvv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chopp_front",
 "speed": 7.0
 }, {
@@ -172,7 +172,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oprun")
 }],
-"loop": true,
+"loop": 1,
 "name": &"chopp_side",
 "speed": 7.0
 }, {
@@ -186,7 +186,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_fulsm")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_back",
 "speed": 6.0
 }, {
@@ -200,7 +200,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_i4ail")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_front",
 "speed": 6.0
 }, {
@@ -214,7 +214,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_l71n6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle_side",
 "speed": 6.0
 }, {
@@ -228,7 +228,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_31cv2")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_back",
 "speed": 6.0
 }, {
@@ -242,7 +242,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_wqfne")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_front",
 "speed": 6.0
 }, {
@@ -256,31 +256,31 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_487ah")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk_side",
 "speed": 6.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
-size = Vector2(19, 18)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_krbkg"]
+size = Vector2(20, 22)
 
 [node name="player" type="CharacterBody2D" unique_id=1919365941]
+z_index = 2
 position = Vector2(1, -1)
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=62547603]
-position = Vector2(-0.9999981, -1.9999981)
-scale = Vector2(2.0208333, 2.0729167)
+position = Vector2(1, 4)
+scale = Vector2(2.0208333, 2.0781248)
 sprite_frames = SubResource("SpriteFrames_md1ol")
 animation = &"idle_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1822153765]
-position = Vector2(-0.9999962, 2.0000038)
+position = Vector2(1, 5.9604645e-08)
 scale = Vector2(0.99999994, 0.99999994)
-shape = SubResource("RectangleShape2D_g2els")
+shape = SubResource("RectangleShape2D_krbkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1805432991]
-zoom = Vector2(0.75, 0.75)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
