@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bu23oc575shsw"]
 
-[ext_resource type="Script" uid="uid://cnm3m3hl24sfh" path="res://player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://cnm3m3hl24sfh" path="res://script/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://art/graphics/characters/main/main_basic.png" id="2_qhqgy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
@@ -273,6 +273,7 @@ position = Vector2(-0.9999981, -1.9999981)
 scale = Vector2(2.0208333, 2.0729167)
 sprite_frames = SubResource("SpriteFrames_md1ol")
 animation = &"idle_front"
+autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1822153765]
 position = Vector2(-0.9999962, 2.0000038)
