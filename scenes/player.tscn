@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bu23oc575shsw"]
+[gd_scene format=3 uid="uid://cj1pbi7u70nh4"]
 
 [ext_resource type="Script" uid="uid://cnm3m3hl24sfh" path="res://script/player.gd" id="1_g2els"]
 [ext_resource type="Texture2D" uid="uid://bp3sfnx2rutrs" path="res://art/graphics/characters/main/main_basic.png" id="2_qhqgy"]
@@ -262,11 +262,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krbkg"]
-size = Vector2(20, 22)
+size = Vector2(17.5, 24)
 
 [node name="player" type="CharacterBody2D" unique_id=1919365941]
 z_index = 2
 position = Vector2(1, -1)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=62547603]
@@ -277,7 +278,7 @@ animation = &"idle_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1822153765]
-position = Vector2(1, 5.9604645e-08)
+position = Vector2(1.1920929e-07, 0)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_krbkg")
 

@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="teste (4.6)"
+config/name="My Little Garden"
 run/main_scene="uid://dhnlexpx6j56e"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
