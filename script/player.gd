@@ -1,12 +1,13 @@
 extends CharacterBody2D
 
-const speed = 100
+const speed = 300
 var current_dir = "none"
+var pode_vender = "nao"
 
 func _ready():
 	$AnimatedSprite2D.play("idle_front")
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:	
 	player_movement(delta)
 	
 @warning_ignore("unused_parameter")
@@ -68,3 +69,26 @@ func play_anim(movement):
 			anim.play("walk_front")
 		elif movement == 0:
 			anim.play("idle_front")
+
+	if Input.is_action_just_pressed("ui_accept") and Dados.milho >=1 and pode_vender=="sim":
+		Dados.milho -=1 
+		Dados.dinheiro += 5
+		
+func _on_sementes_body_entered(body: Node2D) -> void:
+	Dados.semente +=1
+
+
+func _on_gato_body_entered(body: Node2D) -> void:
+	$"../dialogo_gato".show()
+	$"../dialogo_gato".text = str("miau")
+	#$"../dialogo_gato/AnimationPlayer"
+
+func _on_gato_body_exited(body: Node2D) -> void:
+	$"../dialogo_gato".hide()
+
+
+func _on_npc_shop_body_entered(body: Node2D) -> void:
+	pode_vender = "sim"
+	
+func _on_npc_shop_body_exited(body: Node2D) -> void:
+	pode_vender = "nao"
