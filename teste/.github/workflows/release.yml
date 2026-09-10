@@ -1,0 +1,48 @@
+name: CD - Release do TCC
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    name: Gerar release Windows
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: 1. Pegar o codigo-fonte
+        uses: actions/checkout@v4
+
+      - name: 2. Preparar a estacao Godot 4.7
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: 4.7.0
+          use-dotnet: false
+          include-templates: true
+
+      - name: 3. Verificar a versao do Godot
+        run: godot --version
+
+      - name: 4. Criar pasta de build
+        run: mkdir -p build
+
+      - name: 5. Exportar jogo para Windows
+        run: |
+          godot --headless --path . \
+            --export-release "Windows Desktop" \
+            build/TCC.exe
+
+      - name: 6. Compactar jogo
+        run: |
+          cd build
+          zip -r TCC-Windows.zip TCC.exe
+
+      - name: 7. Criar GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: build/TCC-Windows.zip
+          generate_release_notes: true

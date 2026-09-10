@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://dmr1f8mb4mjeh"]
+
+[ext_resource type="Texture2D" uid="uid://bo731a1vxrsc3" path="res://art/graphics/plants/corn.png" id="1_j6be4"]
+[ext_resource type="Script" uid="uid://cs4vkwkxn81tv" path="res://script/milho.gd" id="1_w2akc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2akc"]
+atlas = ExtResource("1_j6be4")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o31jo"]
+atlas = ExtResource("1_j6be4")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1qnvw"]
+atlas = ExtResource("1_j6be4")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh7j2"]
+atlas = ExtResource("1_j6be4")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_igvph"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2akc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o31jo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1qnvw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh7j2")
+}],
+"loop": 1,
+"name": &"milho",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_igvph"]
+size = Vector2(19, 26)
+
+[node name="milho" type="Area2D" unique_id=520996007]
+z_index = 2
+position = Vector2(469, 363)
+script = ExtResource("1_w2akc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=728360766]
+position = Vector2(1.5, -1.5)
+scale = Vector2(1.1875, 1.09375)
+sprite_frames = SubResource("SpriteFrames_igvph")
+animation = &"milho"
+frame = 1
+frame_progress = 0.67936677
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1354239779]
+position = Vector2(1.5, 2)
+shape = SubResource("RectangleShape2D_igvph")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

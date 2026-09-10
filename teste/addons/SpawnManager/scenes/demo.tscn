@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b3g3877udp1lx"]
+
+[ext_resource type="Script" uid="uid://cur1jcddykmyd" path="res://addons/SpawnManager/runtime/SpawnManager.gd" id="1_hyydp"]
+[ext_resource type="Script" uid="uid://mapx8ry8t3k1" path="res://addons/SpawnManager/runtime/SpawnGroup.gd" id="2_sj5og"]
+[ext_resource type="Script" uid="uid://csf1lg8ig4g75" path="res://addons/SpawnManager/runtime/SpawnItem.gd" id="3_dp3mf"]
+[ext_resource type="PackedScene" uid="uid://e660r0aqonov" path="res://addons/SpawnManager/scenes/item_1.tscn" id="4_52ilj"]
+
+[sub_resource type="TileSet" id="TileSet_5hfv0"]
+
+[sub_resource type="Resource" id="Resource_6bw2v"]
+script = ExtResource("3_dp3mf")
+scene = ExtResource("4_52ilj")
+weight = 1
+metadata/_custom_type_script = "uid://csf1lg8ig4g75"
+
+[sub_resource type="Resource" id="Resource_kem5a"]
+script = ExtResource("2_sj5og")
+group_name = "test"
+cells = Array[Vector2i]([Vector2i(0, 0), Vector2i(5, 5)])
+spawn_count = 2
+items = Array[ExtResource("3_dp3mf")]([SubResource("Resource_6bw2v")])
+metadata/_custom_type_script = "uid://mapx8ry8t3k1"
+
+[node name="Demo" type="Node2D" unique_id=418581507]
+
+[node name="SpawnItemLayer" type="TileMapLayer" parent="." unique_id=1955744536]
+tile_set = SubResource("TileSet_5hfv0")
+
+[node name="SpawnManager" type="Node" parent="." unique_id=2111948002 node_paths=PackedStringArray("tilemap_layer")]
+script = ExtResource("1_hyydp")
+tilemap_layer = NodePath("../SpawnItemLayer")
+spawn_groups = Array[ExtResource("2_sj5og")]([SubResource("Resource_kem5a"), null])
+metadata/_custom_type_script = "uid://cur1jcddykmyd"
