@@ -1,4 +1,5 @@
 name: TCC
+<<<<<<< HEAD
 
 on:
   push:
@@ -43,3 +44,25 @@ jobs:
         with:
           name: TCC-Windows
           path: build/
+=======
+on:
+  push:
+    branches: [ main ]
+jobs:
+  build-e-teste:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 1. Pegar o codigo-fonte
+        uses: actions/checkout@v4
+      - name: 1.5. Fabricar o produto
+        run: echo "Este e o nosso produto final!" > produto.txt
+      - name: 2. Estacao de Build (Montagem)
+        run: echo "Construindo o projeto... Verificando se tudo se encaixa!"
+      - name: 3. Estacao de Teste (Controle de Qualidade)
+        run: echo "Rodando os testes... Verificando se tudo funciona!"
+      - name: 4. Empacotar o produto final (Artefato)
+        uses: actions/upload-artifact@v4
+        with:
+          name: pacote-do-produto
+          path: produto.txt
+>>>>>>> 91d99b7 (map tweks and major fixes)
