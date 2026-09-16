@@ -7,7 +7,7 @@ var pode_vender = "nao"
 func _ready():
 	$AnimatedSprite2D.play("idle_front")
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
 	player_movement(delta)
 	
 @warning_ignore("unused_parameter")
@@ -92,3 +92,7 @@ func _on_npc_shop_body_entered(body: Node2D) -> void:
 	
 func _on_npc_shop_body_exited(body: Node2D) -> void:
 	pode_vender = "nao"
+
+func _on_pathway_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		print("PLAYER ENTROU NO PATHWAY")

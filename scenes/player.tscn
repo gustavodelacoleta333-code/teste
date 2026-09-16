@@ -262,7 +262,6 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_krbkg"]
-size = Vector2(17.5, 24)
 
 [node name="player" type="CharacterBody2D" unique_id=1919365941]
 z_index = 2
@@ -271,17 +270,18 @@ scale = Vector2(0.25, 0.25)
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=62547603]
-position = Vector2(1, 4)
+position = Vector2(4, 4)
 scale = Vector2(2.0208333, 2.0781248)
 sprite_frames = SubResource("SpriteFrames_md1ol")
 animation = &"idle_front"
 autoplay = "idle_front"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1822153765]
-position = Vector2(1.1920929e-07, 0)
+position = Vector2(4, 4)
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("RectangleShape2D_krbkg")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1805432991]
+zoom = Vector2(0.5, 0.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0

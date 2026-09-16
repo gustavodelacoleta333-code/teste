@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cpf3pi3nehx2u" path="res://art/Props/Trees/Sprites/tree_32.png" id="20_2tqlo"]
 [ext_resource type="Texture2D" uid="uid://bahar7tt7rk62" path="res://art/Props/Trees/Sprites/tree_29.png" id="21_7ide4"]
 [ext_resource type="Texture2D" uid="uid://b1cmu3aai85qc" path="res://art/graphics/tilesets/grass.png" id="22_36r3x"]
+[ext_resource type="PackedScene" uid="uid://cj1pbi7u70nh4" path="res://scenes/player.tscn" id="23_ilfch"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qra1m"]
 texture = ExtResource("1_qra1m")
@@ -508,3 +509,6 @@ tile_set = SubResource("TileSet_4hqk2")
 [node name="Casas" type="TileMapLayer" parent="cenario/TileMap" unique_id=852941176]
 use_parent_material = true
 tile_set = SubResource("TileSet_4hqk2")
+
+[node name="player" parent="cenario/TileMap" unique_id=1919365941 instance=ExtResource("23_ilfch")]
+position = Vector2(-279.66666, 46.333332)
